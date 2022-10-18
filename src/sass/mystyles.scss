@@ -1,0 +1,228 @@
+@charset "utf-8";
+
+$dark: #0f0e17;
+$orange: #ff8906;
+$orange2: #f25f4c;
+$orange-light: #f25f4c;
+
+$gray: #333333;
+$dark-gray: #141414ad;
+$dark-gray2: #222222b0;
+$pink: #e16162;
+$red: #c03535;
+$green: #55c035;
+
+$warning: $orange;
+$info: $orange2;
+$link: $dark;
+$link-hover: $pink;
+$link-active: $orange-light;
+$black: $dark;
+$info: $pink;
+$danger: $red;
+$success: $green;
+
+$table-background-color: $dark-gray;
+$table-cell-border: 1px solid $gray;
+
+$box-background-color: $dark-gray2;
+
+#app {
+    background-color: $dark;
+    min-height: 100vh;
+}
+
+header {
+    padding: 10px;
+}
+
+main {
+    margin-top: 15px;
+}
+
+.navbar {
+    background-color: transparent !important;
+}
+
+.table {
+    border-collapse: separate;
+    box-shadow: 0px 0px 25px 11px rgba(0, 0, 0, 0.12);
+    thead tr td {
+        text-decoration: underline;
+        &:hover {
+            cursor: pointer;
+            color: $dark-gray2;
+        }
+        &:first-child {
+            border-top-left-radius: 10px;
+        }
+        &:last-child {
+            border-top-right-radius: 10px;
+        }
+    }
+    tbody tr:last-child td {
+        &:first-child {
+            border-bottom-left-radius: 10px;
+        }
+        &:last-child {
+            border-bottom-right-radius: 10px;
+        }
+    }
+
+    tbody tr:last-child td,
+    tbody tr:last-child th {
+        border-bottom-width: 1px !important;
+    }
+
+    tbody tr td img {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+.double-list {
+    .double-list-item { 
+        width: 48%;
+        margin: 10px 0;
+        padding: 10px 0;
+        border-bottom: 1px solid $gray;
+        .text {
+            margin-left: 10px;
+        }
+    }
+}
+
+.block-site {
+    margin-top: 10px;
+    .tag {
+        margin: 5px !important;
+    }
+}
+
+.button {
+    color: #363636 !important;
+}
+
+
+
+.notification {
+    position: fixed !important;
+    bottom: 30px;
+    right: 20px;
+}
+
+.preloader {
+    margin: 0 auto;
+    margin-top: 50px;
+    width:100px;
+    height:100px;
+    border-radius:50%;
+    border:8px solid;
+    border-color: $pink;
+    border-right-color: $orange;
+    animation:preloader-anim 1s infinite linear;
+}
+
+.level {
+    margin-top: 10px;
+}
+.title {
+    margin-bottom: 0 !important;
+}
+.title.is-3 {
+    margin-bottom: 6px !important;
+}
+.media-content {
+  overflow: hidden;
+}
+
+.tag a {
+    max-width: 300px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+@keyframes preloader-anim {
+    to{
+        transform: rotate(1turn)
+    }
+}
+
+@media(max-width: 980px) {
+    .double-list .double-list-item {
+        width: 100% !important;
+    }
+}
+
+@media(max-width: 770px) {
+    .main-container.is-fluid {
+        padding: 0;
+    }
+}
+
+@media(max-width: 700px) {
+    .table thead tr td {
+        &:first-child {
+            border-top-left-radius: 0px;
+        }
+        &:last-child {
+            border-top-right-radius: 0px;
+        }
+    }
+
+    .table tbody tr:last-child td {
+        &:first-child {
+            border-bottom-left-radius: 0px;
+        }
+        &:last-child {
+            border-bottom-right-radius: 0px;
+        }
+    }
+}
+
+@media(max-width: 1055px) {
+    .level-item  {
+      flex-wrap: wrap;
+      div {
+        width: 50%;
+      }
+      div:nth-last-of-type(-n+2) {
+          margin-top: 20px;
+      }
+    }
+}
+
+@media(max-width: 600px) {
+    .level-item div {
+        width: 100%;
+    }
+    .level-item div:not(:first-child) {
+        margin-top: 20px;
+    }
+}
+
+@media(max-width: 570px) {
+    canvas {
+        height: 250px !important;
+    }
+}
+
+@media(max-width: 470px) {
+    .table {
+        width: 550px !important;
+    }
+    .double-list .double-list-item .text {
+        width: 55%;
+    }
+}
+
+@media(max-width: 370px) {
+    .tag a {
+        max-width: 250px;
+    }
+}
+
+
+
+@import "../../node_modules/bulma/bulma.sass";
